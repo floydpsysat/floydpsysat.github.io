@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Espresso blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Espresso blog">
+  <title>sklearn在机器学习中应用-线性回归 | Espresso blog</title>
+  <meta name="keywords" content=" 机器学习;  线性回归; sklearn ">
+  <meta name="description" content="sklearn在机器学习中应用-线性回归 | Espresso blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="[toc]K近邻K-Nearest Neighber,KNN K近邻分类1sklearn.neighbors.KNeighborsClassifier(n_neighbors&amp;#x3D;5,weights&amp;#x3D;&amp;#39;uniform&amp;#39;,algorithm&amp;#x3D;&amp;#39;auto&amp;#39;,leaf_size&amp;#x3D;30,metirc&amp;#x3D;&amp;#39;minkowski">
 <meta name="keywords" content="机器学习, sklearn, K">
@@ -51,7 +51,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -244,12 +244,49 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-sklearn在机器学习中应用-线性回归" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">sklearn在机器学习中应用-线性回归</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a class="color1">机器学习;  线性回归; sklearn</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-02 19:30:19'>2019-12-02 18:53</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性回归"><span class="toc-text">线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#普通线性回归"><span class="toc-text">普通线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lasso回归"><span class="toc-text">Lasso回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数-1"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性-1"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#岭回归-Ridge"><span class="toc-text">岭回归 Ridge</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#属性-2"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-1"><span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ElasticNet-回归-弹性网络回归"><span class="toc-text">ElasticNet 回归 弹性网络回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数-2"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性-3"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2"><span class="toc-text">方法</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -262,32 +299,54 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[toc]</p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h3 id="普通线性回归"><a href="#普通线性回归" class="headerlink" title="普通线性回归"></a>普通线性回归</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.linear_model.LinearRegression(fit_intercept&#x3D;True,normalize&#x3D;False,n_jobs&#x3D;1)</span></pre></td></tr></table></figure>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p><code>fit_intercept</code> 选择是否计算偏置常数b<br><code>normalize</code> 拟合前是否归一化</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p><code>coef_</code> 输出线性回归模型的权重向量w<br><code>intercept_</code> 输出偏置常数b<br>方法<br><code>fit(X_train,y_train)</code> 在训练集上训练模型<br><code>score(X_test,y_test)</code> 返回模型在测试集上的预测准确率</p>
+<h3 id="Lasso回归"><a href="#Lasso回归" class="headerlink" title="Lasso回归"></a>Lasso回归</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.linear_model.Lasso(alpha&#x3D;1.0,fit_intercept&#x3D;True,normalize&#x3D;False,precompute&#x3D;False,max_iter&#x3D;1000,to1&#x3D;0.0001,warm_start&#x3D;False,posiitve&#x3D;False,selection&#x3D;&#39;cyclic&#39;)</span></pre></td></tr></table></figure>
+<h4 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h4><p><code>alpha</code> L1正则化带的常数调节因子<br><code>fit_intercept</code> 是否计算偏置常数<br><code>normalize</code> 是否归一化<br><code>precompute</code>是否使用预先计算的Gram矩阵来加快计算<br><code>max_iter</code> 最大迭代次数<br><code>tol</code> 迭代收敛的阈值<br><code>warm-start</code> 是否使用前一次训练的结果继续训练<br><code>positive</code> 是否强制所有权重系数为正<br><code>selection</code> 迭代时选择哪个权重系数更新<br>    - cycle 从前往后依次选择<br>    - random 随机选择</p>
+<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><p><code>coef_</code><br><code>intercept_</code><br><code>n_iter_</code> 输出实际迭代次数</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p><code>fit(X_train,y_train)</code><br><code>score(X_test,y_test)</code><br><code>predict(X)</code> 返回预测值 $\hat{y}$</p>
+<h3 id="岭回归-Ridge"><a href="#岭回归-Ridge" class="headerlink" title="岭回归 Ridge"></a>岭回归 <code>Ridge</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.linear_model.Ridge(alpha&#x3D;1.0,fit_intercept&#x3D;True,normalize&#x3D;False,max_iter&#x3D;None,tol&#x3D;0.001,solver&#x3D;&#39;auto&#39;)</span></pre></td></tr></table></figure>
+<p>####　参数<br><code>alpha</code> L2正则化前面带的常数调节因子<br><code>fit_itercept</code> 截距<br><code>normalize</code><br><code>max_iter</code><br><code>tol</code><br><code>solver</code> 指定求解最优化问题的算法<br>    - svd 奇异值分解计算回归系数<br>    - cholesky 使用标准的<code>scipy.linalg.solve</code>数求解<br>    - sparse_cg 使用<code>scipy.sparse.linalg.cg</code> 中的共轭梯度求解器求解<br>    - lsqr  使用专门的正则化最小二乘法<code>scipy.sparse.linalg.lsqr</code> 速度快<br>    - sag  使用随机平均梯度下降法求解</p>
+<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><p><code>coef_</code><br><code>intercept_</code><br><code>n_iter</code></p>
+<h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><p><code>fit(X_train,y_trian)</code><br><code>score(X_test,y_test)</code><br><code>predict(X)</code></p>
+<h3 id="ElasticNet-回归-弹性网络回归"><a href="#ElasticNet-回归-弹性网络回归" class="headerlink" title="ElasticNet 回归 弹性网络回归"></a>ElasticNet 回归 弹性网络回归</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.linear_model.ElasticNet(alpha&#x3D;1.0,l１_ratio&#x3D;0.5,fit_intercept&#x3D;True,normalize&#x3D;False,precompute&#x3D;False,max_iter&#x3D;1000,to1&#x3D;0.0001,warm_start&#x3D;False,posiitve&#x3D;False,selection&#x3D;&#39;cyclic&#39;)</span></pre></td></tr></table></figure>
+<h4 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h4><p>参考<code>Lasso回归</code></p>
+<h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><p>参考<code>Ridge回归</code></p>
+<h4 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h4><p>参考<code>Ridge回归</code></p>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>sklearn在机器学习中应用-线性回归</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="Espresso">Espresso</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-02, 18:53:40</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-02, 19:30:19</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/02/sklearn%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E5%BA%94%E7%94%A8-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" title="sklearn在机器学习中应用-线性回归">http://yoursite.com/2019/12/02/sklearn%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E5%BA%94%E7%94%A8-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2019 Espresso</p>

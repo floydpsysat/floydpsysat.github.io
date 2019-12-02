@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Espresso blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Espresso blog">
+  <title>sklearn在机器学习中的应用-朴素贝叶斯 | Espresso blog</title>
+  <meta name="keywords" content=" 机器学习, 朴素贝叶斯 ">
+  <meta name="description" content="sklearn在机器学习中的应用-朴素贝叶斯 | Espresso blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="[toc]K近邻K-Nearest Neighber,KNN K近邻分类1sklearn.neighbors.KNeighborsClassifier(n_neighbors&amp;#x3D;5,weights&amp;#x3D;&amp;#39;uniform&amp;#39;,algorithm&amp;#x3D;&amp;#39;auto&amp;#39;,leaf_size&amp;#x3D;30,metirc&amp;#x3D;&amp;#39;minkowski">
 <meta name="keywords" content="机器学习, sklearn, K">
@@ -51,7 +51,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -244,12 +244,49 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-sklearn在机器学习中的应用-朴素贝叶斯" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">sklearn在机器学习中的应用-朴素贝叶斯</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a class="color2">机器学习, 朴素贝叶斯</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-02 19:56:07'>2019-12-02 19:33</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#高斯型"><span class="toc-text">高斯型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多项式型"><span class="toc-text">多项式型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性-1"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-1"><span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#伯努利型"><span class="toc-text">伯努利型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数-1"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性-2"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2"><span class="toc-text">方法</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -262,32 +299,52 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[toc]<br>朴素贝叶斯三种实现形式</p>
+<h3 id="高斯型"><a href="#高斯型" class="headerlink" title="高斯型"></a>高斯型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.naive_bayes.GaussianNB()</span></pre></td></tr></table></figure>
+<p>无输入参数</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p><code>class_prior_</code>数组形式 存放训练集数据中各个类别的概率<br><code>class_count_</code>数组形式 存放训练集数据中各个类别包含的训练样本数目<br><code>theta_</code> 各个类别上各个特征的均值$\mu_{k}$<br><code>sigma_</code>各个类别上各个特征的标准差$\sigma_{k}$</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p><code>fit(X_train,y_train)</code><br><code>partial_fit(X_train,y_train)</code>若训练集数目很大，可以划分很多小数据集进行训练<br><code>score(X_test,y_test)</code>返回模型的预测准确率<br><code>predict(X)</code><br><code>predict_proba(X)</code>返回一个数组，各个元素为预测集属于各个类别的概率<br><code>predict_log_proba(X)</code> 对数概率</p>
+<h3 id="多项式型"><a href="#多项式型" class="headerlink" title="多项式型"></a>多项式型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.naive_bayes.MultinominalNB(alpha&#x3D;0.01,fit_prior&#x3D;True)</span></pre></td></tr></table></figure>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p><code>alpha</code> 平滑因子<br><code>fit_prior</code>是否计算$P(Y=c_{k})$,默认为True,表示不计算，使用均匀分布代替</p>
+<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><p><code>class_count_</code> 数组形式，存放训练集数据中各个类别包含的训练样本数目<br><code>feature_count_</code>数组形式，存放训练集数据中各个特征包含的训练样本数目</p>
+<h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><p>参考<code>Gaussian型</code></p>
+<h3 id="伯努利型"><a href="#伯努利型" class="headerlink" title="伯努利型"></a>伯努利型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.naive_bayes.BernoulliNB(alpha&#x3D;0.01,binarize&#x3D;0.0,fit_prior&#x3D;True)</span></pre></td></tr></table></figure>
+<h4 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h4><p><code>alpha</code> 指定平滑因子的值<br><code>binarize</code> 阈值，大于它的编码为1，小于它编码为0，实现数据集的二值化，为None时，假定已经二值化<br><code>fit_prior</code> 参考<code>多项式型</code></p>
+<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><p>参考<code>多形式型</code></p>
+<h4 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h4><p>参考<code>高斯型</code></p>
+<p>###　中文文本分类项目</p>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>sklearn在机器学习中的应用-朴素贝叶斯</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="Espresso">Espresso</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-02, 19:33:46</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-02, 19:56:07</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/02/sklearn%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/" title="sklearn在机器学习中的应用-朴素贝叶斯">http://yoursite.com/2019/12/02/sklearn%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2019 Espresso</p>
