@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>正则化 | Espresso blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="正则化 | Espresso blog">
+  <title>sklearn-K-means | Espresso blog</title>
+  <meta name="keywords" content=" 机器学习; sklearn;K ">
+  <meta name="description" content="sklearn-K-means | Espresso blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="[toc] PCA 主成分分析1class sklearn.decomposition.PCA(n_components&amp;#x3D;None,whiten&amp;#x3D;False,svd_solver&amp;#x3D;&amp;#39;auto&amp;#39;) 参数n_components 指定降维后的维度whiten是否进行白化操作svd_solver指定奇异值分解的方法    auto    arpack 使用s">
 <meta name="keywords" content="机器学习;sklearn;decomposition">
@@ -342,19 +342,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-正则化" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sklearn-K-means" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">正则化</h1>
+        <h1 class="article-title">sklearn-K-means</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a class="color1">机器学习; sklearn;K</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-02 20:17:32'>2019-12-02 17:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-05 18:14:20'>2019-12-05 17:40</time>
         
     </div>
     <div class="article-meta">
@@ -376,7 +382,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#k-means"><span class="toc-text">k-means</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#miniBatch-K-means"><span class="toc-text">miniBatch K-means</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数-1"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性-1"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-1"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#密度聚类"><span class="toc-text">密度聚类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#谱聚类"><span class="toc-text">谱聚类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EM-高斯混合模型"><span class="toc-text">EM 高斯混合模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参数-2"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2"><span class="toc-text">方法</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -392,7 +398,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>[toc]</p>
+<h2 id="k-means"><a href="#k-means" class="headerlink" title="k-means"></a>k-means</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sklearn.cluster.KMeans(n_clusters&#x3D;8,max_iter&#x3D;300,init&#x3D;&#39;k_means++&#39;,n_init&#x3D;10,algorithm&#x3D;&#39;auto&#39;,random_state&#x3D;None)</span></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>init</code>初始化聚类中心的方式<br>    k-means++<br>    random<br><code>n_init</code>指定选择不同的初始化聚类中心运行算法的次数<br><code>algorithm</code> 距离度量算法<br>    auto<br>    full 传统的K-means,二范数度量距离<br>    elkan 使用elkan-K-means  数据稠密的选择<br><code>ramdom_state</code> 用于产生初始化聚类中心的随机化种子</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><code>cluster_centers_</code>输出各个聚类中心的向量<br><code>labels</code> 输出各个簇的类别</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>fit(X)</code>训练聚类模型<br><code>fit-predict(X)</code>在X上执行数据集，返回样本的簇标记<br><code>predict(X)</code>预测样本集X上每个样本最接近的簇</p>
+<h2 id="miniBatch-K-means"><a href="#miniBatch-K-means" class="headerlink" title="miniBatch K-means"></a>miniBatch K-means</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sklearn.cluster.MiniBatchKMeans(n_clusters&#x3D;8,max_iter&#x3D;300,init&#x3D;&#39;k_means++&#39;,n_init&#x3D;3,init_size&#x3D;None,random_state&#x3D;None,batch_size&#x3D;100,reassignment_ratio&#x3D;0.01,max_no_improvement&#x3D;10)</span></pre></td></tr></table></figure>
+<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><p><code>init_size</code>用来做聚类中心初始值候选的样本个数<br><code>random_state</code> 产生初始化聚类中心的随机化种子<br><code>batch_size</code>小批量样本数目<br><code>reassignment_ratio</code>某个聚类中心被重新赋值的次数占所有聚类中心被重新赋值次数的比例<br><code>max_no_improvement</code> 当连续多个mini batch没有改善聚类效果时，停止算法</p>
+<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p><code>cluster_centers_</code>输出各个聚类中心向量<br><code>labels_</code>输出各个簇的标签</p>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><p><code>fit(X)</code>在X上执行数据集<br><code>fit_predict(X)</code> 在X上执行数据集，返回样本X的簇标记<br><code>partial_fit(X)</code>在单个minBatch上更新K-means<br><code>predict(X)</code>预测X中每个样本接近的簇<br>##层次聚类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sklean.cluster.AgglomerativeClustering(n_clusters&#x3D;2,affinity&#x3D;&#39;euclidean&#39;,compute_full_tree&#x3D;&#39;auto&#39;,linkage&#x3D;ward&#39;)</span></pre></td></tr></table></figure>
+<h3 id="密度聚类"><a href="#密度聚类" class="headerlink" title="密度聚类"></a>密度聚类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sklearn.cluster.DBSCAN(eps&#x3D;0.5,min_sampels&#x3D;5,metric&#x3D;&#39;euclidean&#39;,algorithm&#x3D;&#39;auto&#39;,leaf_size&#x3D;30)</span></pre></td></tr></table></figure>
+<h3 id="谱聚类"><a href="#谱聚类" class="headerlink" title="谱聚类"></a>谱聚类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sklearn.cluster.spectral_clustering(n_clusters&#x3D;8,affinity,assign_labels&#x3D;&#39;kmeans&#39;)</span></pre></td></tr></table></figure>
+<h3 id="EM-高斯混合模型"><a href="#EM-高斯混合模型" class="headerlink" title="EM 高斯混合模型"></a>EM 高斯混合模型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sklearn.mixtures.GaussianMixtures(n_components&#x3D;1,tol&#x3D;0.001,max_iter&#x3D;100)</span></pre></td></tr></table></figure>
+<h4 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h4><p><code>n_components</code>指定混合高斯模型的成分数目<br><code>tol</code>收敛阈值，当下限平均增益低于该阈值时，EM迭代停止<br><code>max_iter</code>EM迭代次数</p>
+<h4 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h4><p><code>fit(X,y)</code>使用EM算法估计模型参数<br><code>predict(X)</code>预测标签<br><code>predict_proba(X)</code>属于各个成分的概率<br><code>score(X,y)</code>计算样本的平均对数损失值</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -401,12 +422,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>正则化</p>
+    <p><span class="copy-title">文章标题:</span>sklearn-K-means</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Espresso">Espresso</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-02, 17:54:10</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-02, 20:17:32</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/" title="正则化">http://yoursite.com/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-05, 17:40:08</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-05, 18:14:20</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/05/sklearn-K-means/" title="sklearn-K-means">http://yoursite.com/2019/12/05/sklearn-K-means/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

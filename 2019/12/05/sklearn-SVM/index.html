@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>正则化 | Espresso blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="正则化 | Espresso blog">
+  <title>sklearn-SVM | Espresso blog</title>
+  <meta name="keywords" content=" 机器学习; sklearn ; svm ">
+  <meta name="description" content="sklearn-SVM | Espresso blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="[toc] PCA 主成分分析1class sklearn.decomposition.PCA(n_components&amp;#x3D;None,whiten&amp;#x3D;False,svd_solver&amp;#x3D;&amp;#39;auto&amp;#39;) 参数n_components 指定降维后的维度whiten是否进行白化操作svd_solver指定奇异值分解的方法    auto    arpack 使用s">
 <meta name="keywords" content="机器学习;sklearn;decomposition">
@@ -342,19 +342,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-正则化" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sklearn-SVM" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">正则化</h1>
+        <h1 class="article-title">sklearn-SVM</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a class="color5">机器学习; sklearn ; svm</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-02 20:17:32'>2019-12-02 17:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-05 16:22:41'>2019-12-05 16:02</time>
         
     </div>
     <div class="article-meta">
@@ -376,7 +382,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性SVM"><span class="toc-text">线性SVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非线性SVM"><span class="toc-text">非线性SVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数-1"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-1"><span class="toc-text">方法</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -392,7 +398,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>[toc]</p>
+<h2 id="线性SVM"><a href="#线性SVM" class="headerlink" title="线性SVM"></a>线性SVM</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.svm.LinearSVC(penalty&#x3D;&#39;l2&#39;,c&#x3D;1.0,loss&#x3D;&#39;squared_hinge&#39;,fit_intercept&#x3D;True,class_weight&#x3D;None,max_iter&#x3D;1000,tol&#x3D;0.0001,multi_class&#x3D;&#39;ovr&#39;,dual&#x3D;True,intercept_scaling&#x3D;1)</span></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>penalty</code>正则化项<br><code>c</code> 正则化权重，惩罚系数的导数<br><code>loss</code>损失函数类型<br>    Hinge合页损失<br>    squared_hinge 合页损失函数的平方，默认<br><code>fit_intercept</code><br><code>class_weight</code> 若样本不均衡，设定<code>balanced</code>表示类别的权重与其出现的频率相反<br><code>max_iter</code><br><code>tol</code><br><code>multi_class</code>多分类策略<br><code>dual</code><br><code>intercept_scaling</code></p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><code>coef_</code>权重向量<br><code>intercept_</code></p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>fit(X_train,y_train)</code><br><code>score(X_test,y_test)</code><br><code>predict(X)</code></p>
+<h2 id="非线性SVM"><a href="#非线性SVM" class="headerlink" title="非线性SVM"></a>非线性SVM</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.svm.SVC(c&#x3D;1.0,kernel&#x3D;&#39;rbf&#39;,degree&#x3D;3,gamma&#x3D;&#39;auto&#39;,&#39;coef0&#39;&#x3D;0.0,tol&#x3D;0.001,&#39;class_weight&#x3D;None&#39;,max_iter&#x3D;-1)</span></pre></td></tr></table></figure>
+<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><p><code>kernel</code> 核函数类型<br>    linear 线性<br>    poly 多项式<br>    rbf 高斯核函数<br>    Sigmoid 多层感知机<br>    precomputed 表示已经提供一个kernel矩阵<br><code>degree</code>核函数为多项式时，指定p,默认3<br><code>gamma</code>多项式核函数和高斯核函数的系数，其他核函数时，忽略<br><code>coef0</code>核函数为poly或者Sigmoid时，指定<code>r</code>值<br>###　属性<br><code>support_</code>支持向量的下标<br><code>support_vectors_</code>支持向量<br><code>n_support_</code>每一个分类支持向量的个数<br><code>coef_</code>用于输出线性回归模型的权重向量w<br><code>intercept_</code> 线性回归的偏置常数</p>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><p><code>predict_proba(X)</code><br><code>predict_log_proba(X)</code></p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -401,12 +415,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>正则化</p>
+    <p><span class="copy-title">文章标题:</span>sklearn-SVM</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Espresso">Espresso</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-02, 17:54:10</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-02, 20:17:32</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/" title="正则化">http://yoursite.com/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-05, 16:02:14</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-05, 16:22:41</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/05/sklearn-SVM/" title="sklearn-SVM">http://yoursite.com/2019/12/05/sklearn-SVM/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

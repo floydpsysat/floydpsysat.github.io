@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>正则化 | Espresso blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="正则化 | Espresso blog">
+  <title>sklearn-logistic回归 | Espresso blog</title>
+  <meta name="keywords" content=" 机器学习,sklearn ">
+  <meta name="description" content="sklearn-logistic回归 | Espresso blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="[toc] PCA 主成分分析1class sklearn.decomposition.PCA(n_components&amp;#x3D;None,whiten&amp;#x3D;False,svd_solver&amp;#x3D;&amp;#39;auto&amp;#39;) 参数n_components 指定降维后的维度whiten是否进行白化操作svd_solver指定奇异值分解的方法    auto    arpack 使用s">
 <meta name="keywords" content="机器学习;sklearn;decomposition">
@@ -342,19 +342,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-正则化" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sklearn-logistic回归" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">正则化</h1>
+        <h1 class="article-title">sklearn-logistic回归</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a class="color3">机器学习,sklearn</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-02 20:17:32'>2019-12-02 17:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-05 16:02:27'>2019-12-05 15:43</time>
         
     </div>
     <div class="article-meta">
@@ -376,7 +382,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -392,7 +398,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>[toc]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.linear_model.LogisticRegression(penalty&#x3D;&#39;l2&#39;,c&#x3D;1.0,fit_intercept&#x3D;True,class_weight&#x3D;None,solver&#x3D;&#39;liblinear&#39;,max_iter&#x3D;100,tol&#x3D;0.0001,multi_class&#x3D;&#39;ovr&#39;,dual&#x3D;False,warm_start&#x3D;False,n_jobs&#x3D;1)</span></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>penalty</code>指定似然函数中添加的正则化项<br>    -l2 L2正则化<br>    -l1 L1正则化<br><code>c</code> 正则化项的权重，是惩罚系数的导数，c越小，正则化项越大<br><code>fit_intercept</code>是否计算偏置常数<br><code>class_weight</code> 各个类别的权重，None时，权重为1，可以添加字典设置<code>{class_label:weight}</code><br><code>solver</code>指定求解最优化问题的方法<br>    默认liblinear适用于小数据集<br>    sag 数据集大，stochastic gradient descent，使用L2<br>    newton-cg 牛顿法 L2<br>    lbfgs拟牛顿法 L2<br><code>max_iter</code>最大迭代次数<br><code>tol</code>收敛阈值<br><code>multi_class</code>指定多分类策略<br>    ovr one-vs-rest 一对其他策略<br>    multinominal 直接采用多项logistic回归<br><code>dual</code> 是否采用对偶求解<br><code>warm_start</code><br><code>n_jobs</code></p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><code>coef_</code>输出逻辑回归模型的权重向量<br><code>intercept</code><br><code>n_iter</code></p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>fit(X_train,y_train)</code><br><code>score(X_test,y_test)</code><br><code>predict(X)</code><br><code>predict_proba(X)</code><br><code>predict_log_proba(X)</code></p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -401,12 +412,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>正则化</p>
+    <p><span class="copy-title">文章标题:</span>sklearn-logistic回归</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Espresso">Espresso</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-02, 17:54:10</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-02, 20:17:32</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/" title="正则化">http://yoursite.com/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-05, 15:43:35</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-05, 16:02:27</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/05/sklearn-logistic%E5%9B%9E%E5%BD%92/" title="sklearn-logistic回归">http://yoursite.com/2019/12/05/sklearn-logistic%E5%9B%9E%E5%BD%92/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

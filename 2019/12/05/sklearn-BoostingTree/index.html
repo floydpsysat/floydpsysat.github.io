@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>正则化 | Espresso blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="正则化 | Espresso blog">
+  <title>sklearn-BoostingTree | Espresso blog</title>
+  <meta name="keywords" content=" 机器学习; sklearn; boosting tree ">
+  <meta name="description" content="sklearn-BoostingTree | Espresso blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="[toc] PCA 主成分分析1class sklearn.decomposition.PCA(n_components&amp;#x3D;None,whiten&amp;#x3D;False,svd_solver&amp;#x3D;&amp;#39;auto&amp;#39;) 参数n_components 指定降维后的维度whiten是否进行白化操作svd_solver指定奇异值分解的方法    auto    arpack 使用s">
 <meta name="keywords" content="机器学习;sklearn;decomposition">
@@ -342,19 +342,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-正则化" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sklearn-BoostingTree" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">正则化</h1>
+        <h1 class="article-title">sklearn-BoostingTree</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a class="color4">机器学习; sklearn; boosting tree</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-02 20:17:32'>2019-12-02 17:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-05 17:39:20'>2019-12-05 17:15</time>
         
     </div>
     <div class="article-meta">
@@ -376,7 +382,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -392,7 +398,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>[toc]<br>分类对应GradientBoostingClassifier类<br>回归对应GradientBoostingRegressor类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class skelarn.ensemble.GradientBoostingClassifier(n_estimators&#x3D;100,learning_rate&#x3D;0.1,subsample&#x3D;1.0,max_features&#x3D;None,loss&#x3D;&#39;deviance&#39;,criterion&#x3D;&#39;friedman_mse&#39;,max_depth&#x3D;3,max_leaf_nodes&#x3D;None,min_samples_split&#x3D;2,min_samples_leaf&#x3D;1,min_impurity_split&#x3D;1e-07)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">class skelarn.ensemble.GradientBoostingRegressor(n_estimators&#x3D;100,learning_rate&#x3D;0.1,subsample&#x3D;1.0,max_features&#x3D;None,loss&#x3D;&#39;ls&#39;,criterion&#x3D;&#39;friedman_mse&#39;,max_depth&#x3D;3,max_leaf_nodes&#x3D;None,min_samples_split&#x3D;2,min_samples_leaf&#x3D;1,min_impurity_split&#x3D;1e-07)</span></pre></td></tr></table></figure>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p><code>learning_rate</code>基学习器权重衰减系数$\eta$<br><code>subsample</code>选择对样本的采样程度，若小于1，则使用部分样本训练，0.5-0.8<br><code>max_features</code>划分时考虑的最大特征数<br><code>loss</code>损失函数<br>    对于分类模型<br>        deviance 对数似然损失函数<br>        exponential 指数损失函数<br>    对于回归模型<br>        ls 标准差函数<br>        lad 绝对损失函数<br>        huber Huber损失函数 样本噪声较大时的选择<br>        quantile 分位数损失函数<br><code>criterion</code> 特征选择标准<br><code>max-depth</code>最大决策树深度，对模型影响很大<br><code>min_sampels_split</code>内部节点进行再划分所需要最小样本数<br><code>min_samples_leaf</code> 叶子节点最少样本数</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><code>feature_importances_</code><br><code>estimators_</code>存放训练好的基学习器情况，列表<br><code>loss_</code>损失函数列表<br><code>train_score_</code>各轮迭代后模型整体损失函数的值，列表</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><code>apply(X)</code>获取样本X中各个样本在集成模型各基学习器中叶子节点的位置信息，得到结果是一个矩阵<br><code>fit(X_train,y_train)</code><br><code>score(X_test,y_test)</code><br><code>predit(X)</code><br><code>predict_proba(X)</code>预测集X属于各个类别的概率，回归树无该方法<br><code>predict_log_proba(X)</code>数组各个元素是预测集X属于各个类别的对数概率，回归树无该方法</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -401,12 +412,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>正则化</p>
+    <p><span class="copy-title">文章标题:</span>sklearn-BoostingTree</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Espresso">Espresso</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-02, 17:54:10</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-02, 20:17:32</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/" title="正则化">http://yoursite.com/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-05, 17:15:34</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-05, 17:39:20</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/05/sklearn-BoostingTree/" title="sklearn-BoostingTree">http://yoursite.com/2019/12/05/sklearn-BoostingTree/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

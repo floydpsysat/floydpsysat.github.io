@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>正则化 | Espresso blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="正则化 | Espresso blog">
+  <title>sklearn-RandomForest | Espresso blog</title>
+  <meta name="keywords" content=" 机器学习; RF; sklearn ">
+  <meta name="description" content="sklearn-RandomForest | Espresso blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="[toc] PCA 主成分分析1class sklearn.decomposition.PCA(n_components&amp;#x3D;None,whiten&amp;#x3D;False,svd_solver&amp;#x3D;&amp;#39;auto&amp;#39;) 参数n_components 指定降维后的维度whiten是否进行白化操作svd_solver指定奇异值分解的方法    auto    arpack 使用s">
 <meta name="keywords" content="机器学习;sklearn;decomposition">
@@ -342,19 +342,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-正则化" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sklearn-RandomForest" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">正则化</h1>
+        <h1 class="article-title">sklearn-RandomForest</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a class="color3">机器学习; RF; sklearn</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-02 20:17:32'>2019-12-02 17:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-05 16:52:05'>2019-12-05 16:22</time>
         
     </div>
     <div class="article-meta">
@@ -376,7 +382,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bagging"><span class="toc-text">Bagging</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#随机森林RF"><span class="toc-text">随机森林RF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -392,7 +398,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>[toc]</p>
+<h2 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h2><p>以K近邻作为基学习器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">from sklearn.ensemble import BaggingClassifier</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">from sklearn.neighbors import KNeighborsClassifier</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">bagging&#x3D;BaggingClassifier(KNeighborsClassifier(),max_samples&#x3D;0.6,max_features&#x3D;0.6)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">bagging.fit(X_train,y_train)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">y_pred&#x3D;bagging.predict(X_test)</span></pre></td></tr></table></figure>
+<h2 id="随机森林RF"><a href="#随机森林RF" class="headerlink" title="随机森林RF"></a>随机森林RF</h2><p>随机森林基于CART实现，有分类模型和回归模型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.ensemble.RandomForestClassifier(n_estimators&#x3D;10,criterion&#x3D;&#39;gini&#39;,oob_score&#x3D;False,max_features&#x3D;&#39;auto&#39;,max_depth&#x3D;None,max_leaf_nodes&#x3D;None,min_samples_split&#x3D;2,min_impurity_split&#x3D;1e-07,min_samples_leaf&#x3D;1,class_weight&#x3D;None,n_jobs&#x3D;1)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">class sklearn.ensemble.RandomForestRegressor(n_estimators&#x3D;10,criterion&#x3D;&#39;mse&#39;,oob_score&#x3D;False,max_features&#x3D;&#39;auto&#39;,max_depth&#x3D;None,max_leaf_nodes&#x3D;None,min_samples_split&#x3D;2,min_impurity_split&#x3D;1e-07,min_samples_leaf&#x3D;1,n_jobs&#x3D;1)</span></pre></td></tr></table></figure>
+
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>参数调节包括两部分参数，Bagging参数和CART决策树参数<br><code>n_estimators</code> 基学习器的最大迭代次数<br><code>criterion</code>特征划分时的评价标准<br>    分类器<br>    gini基尼系数<br>    entropy信息增益<br>    回归器<br>    mse 均方误差<br>    mae 绝对误差<br><code>oob_score</code>是否采用袋外样本评估模型好坏<br><code>max_features</code> 划分时考虑的最大特征数<br><code>max_depth</code> 决策树的最大深度<br><code>max_leaf_nodes</code>最大叶子节点数<br><code>min_samples_split</code> 内部节点在划分时所需的最小样本数<br><code>min_impurity_split</code>节点划分的最小不纯度<br><code>min_samples_leaf</code>叶子节点最小样本数<br><code>class_weight</code>样本所属权重的类别<br><code>n_jobs</code>CPU核数</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><code>feature_importances_</code>给出各个特征的重要程度<br><code>estimators_</code> 存放各个训练好的基学习器情况列表<br><code>n_features_</code>模型训练好时使用的特征数目<br><code>n_outputs_</code>模型训练好后输出的数目<br><code>oob_score_</code>模型训练好后使用训练集袋外样本验证得到的分数<br><code>oob-predicition_</code>训练好的模型对训练集袋外样本预测的结果</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>apply(X)</code>获取样本X中各个样本在集成模型的各基学习器中叶子节点位置信息<br><code>fit(X_train,y_train)</code><br><code>score(X_test,y_test)</code><br><code>predict(X)</code><br><code>predict_proba(X)</code><br><code>predict_log_proba(X)</code></p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -401,12 +416,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>正则化</p>
+    <p><span class="copy-title">文章标题:</span>sklearn-RandomForest</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Espresso">Espresso</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-02, 17:54:10</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-02, 20:17:32</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/" title="正则化">http://yoursite.com/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-05, 16:22:37</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-05, 16:52:05</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/05/sklearn-RandomForest/" title="sklearn-RandomForest">http://yoursite.com/2019/12/05/sklearn-RandomForest/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

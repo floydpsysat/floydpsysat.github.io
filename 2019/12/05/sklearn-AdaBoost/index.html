@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>正则化 | Espresso blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="正则化 | Espresso blog">
+  <title>sklearn-AdaBoost | Espresso blog</title>
+  <meta name="keywords" content=" 机器学习; sklearn; Adaboost ">
+  <meta name="description" content="sklearn-AdaBoost | Espresso blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="[toc] PCA 主成分分析1class sklearn.decomposition.PCA(n_components&amp;#x3D;None,whiten&amp;#x3D;False,svd_solver&amp;#x3D;&amp;#39;auto&amp;#39;) 参数n_components 指定降维后的维度whiten是否进行白化操作svd_solver指定奇异值分解的方法    auto    arpack 使用s">
 <meta name="keywords" content="机器学习;sklearn;decomposition">
@@ -342,19 +342,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-正则化" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sklearn-AdaBoost" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">正则化</h1>
+        <h1 class="article-title">sklearn-AdaBoost</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a class="color4">机器学习; sklearn; Adaboost</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-02 20:17:32'>2019-12-02 17:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-05 17:15:01'>2019-12-05 16:52</time>
         
     </div>
     <div class="article-meta">
@@ -376,7 +382,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -392,7 +398,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>[toc]<br>可用于分类和回归</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">class sklearn.ensemble.AdaBoostClassifier(base_estimator&#x3D;None,n_estimators&#x3D;50,algorithm&#x3D;&#39;SAMME.R&#39;,learning_rate&#x3D;1.0,random_state&#x3D;None)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">class sklearn.ensemble.AdaBoostRegressor(base_estimator&#x3D;None,n_estimators&#x3D;50,learning_rate&#x3D;1.0,loss&#x3D;&#39;linear&#39;,random_state&#x3D;None)</span></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>base_estimator</code>指定基学习器类型，默认CART<br><code>n_estimators</code>指定基学习器个数，太小容易欠拟合，太大容易过拟合<br><code>algorithm</code>AdaBoost分类特有的参数，指定基学习器的投票权重<br>    SAMME 由基学习器对训练集的预测误差率决定<br>    SAMME.R 使用基学习器对样本集分类的预测概率大小作为弱学习器权重<br><code>learning_rate</code>弱学习器的权重衰减系数$\eta$,协调迭代次数，与n_estimators一起调参<br><code>loss</code>AdaBoost回归特有的参数，损失函数的类型<br>    linear 线性损失<br>    square 平方损失<br>    exponential 指数损失<br><code>random_state</code>选择基学习器的参数，由基学习器本身的参数决定</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><code>feature_importances_</code><br><code>estimators_</code>存放各个训练好的基学习器列表<br><code>estimator_weights_</code>投票权重列表<br><code>estimator_errors_</code>预测误差率列表<br><code>n_classes_</code>分类的类别数目 AdaBoostClassifie r特有<br><code>classes_</code>分类结果列表 AdaBoostClssifier 特有</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>fit(X_train,y_train)</code><br><code>score(X_test,y_test)</code><br><code>predict(X)</code><br><code>predict_proba(X)</code><br><code>predict_log_proba(X)</code></p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
@@ -401,12 +412,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>正则化</p>
+    <p><span class="copy-title">文章标题:</span>sklearn-AdaBoost</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="Espresso">Espresso</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-02, 17:54:10</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-02, 20:17:32</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/" title="正则化">http://yoursite.com/2019/12/02/%E6%AD%A3%E5%88%99%E5%8C%96/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-05, 16:52:01</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-05, 17:15:01</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/05/sklearn-AdaBoost/" title="sklearn-AdaBoost">http://yoursite.com/2019/12/05/sklearn-AdaBoost/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

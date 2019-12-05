@@ -6,15 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="Espresso blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="[toc]K近邻K-Nearest Neighber,KNN K近邻分类1sklearn.neighbors.KNeighborsClassifier(n_neighbors&amp;#x3D;5,weights&amp;#x3D;&amp;#39;uniform&amp;#39;,algorithm&amp;#x3D;&amp;#39;auto&amp;#39;,leaf_size&amp;#x3D;30,metirc&amp;#x3D;&amp;#39;minkowski">
-<meta name="keywords" content="机器学习, sklearn, K">
+<meta name="description" content="[toc] PCA 主成分分析1class sklearn.decomposition.PCA(n_components&amp;#x3D;None,whiten&amp;#x3D;False,svd_solver&amp;#x3D;&amp;#39;auto&amp;#39;) 参数n_components 指定降维后的维度whiten是否进行白化操作svd_solver指定奇异值分解的方法    auto    arpack 使用s">
+<meta name="keywords" content="机器学习;sklearn;decomposition">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sklearn在机器学习中的应用－Ｋ近邻">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;02&#x2F;sklearn%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%8DK%E8%BF%91%E9%82%BB&#x2F;index.html">
+<meta property="og:title" content="sklearn-降维-PCA">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;sklearn-PCA&#x2F;index.html">
 <meta property="og:site_name" content="Espresso blog">
-<meta property="og:description" content="[toc]K近邻K-Nearest Neighber,KNN K近邻分类1sklearn.neighbors.KNeighborsClassifier(n_neighbors&amp;#x3D;5,weights&amp;#x3D;&amp;#39;uniform&amp;#39;,algorithm&amp;#x3D;&amp;#39;auto&amp;#39;,leaf_size&amp;#x3D;30,metirc&amp;#x3D;&amp;#39;minkowski">
+<meta property="og:description" content="[toc] PCA 主成分分析1class sklearn.decomposition.PCA(n_components&amp;#x3D;None,whiten&amp;#x3D;False,svd_solver&amp;#x3D;&amp;#39;auto&amp;#39;) 参数n_components 指定降维后的维度whiten是否进行白化操作svd_solver指定奇异值分解的方法    auto    arpack 使用s">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-02T12:17:03.508Z">
+<meta property="og:updated_time" content="2019-12-05T11:10:19.441Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -112,7 +112,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(6)</small></div></li>
+    <li><div class="all active">全部文章<small>(14)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -126,7 +126,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="6">
+<input type="hidden" id="yelog_site_posts_number" value="14">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -161,6 +161,34 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
+        <a class="color4">机器学习; sklearn; Adaboost</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">机器学习; sklearn;K</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">机器学习; sklearn; boosting tree</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">机器学习; RF; sklearn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">机器学习;sklearn;decomposition</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">机器学习; sklearn ; svm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">机器学习,sklearn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color1">机器学习;  线性回归; sklearn</a>
     </li>
     
@@ -169,15 +197,19 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color2">机器学习, sklearn, K</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color2">机器学习, 朴素贝叶斯</a>
     </li>
     
     <li class="article-tag-list-item">
+        <a class="color3">机器学习;sklearn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color3">机器学习;过拟合;欠拟合</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">机器学习, sklearn, K</a>
     </li>
     
     <div class="clearfix"></div>
@@ -185,6 +217,62 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2019/12/05/sklearn-AdaBoost/"
+           data-tag="机器学习; sklearn; Adaboost"
+           data-author="" >
+            <span class="post-title" title="sklearn-AdaBoost">sklearn-AdaBoost</span>
+            <span class="post-date" title="2019-12-05 16:52:01">2019/12/05</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/05/sklearn-K-means/"
+           data-tag="机器学习; sklearn;K"
+           data-author="" >
+            <span class="post-title" title="sklearn-K-means">sklearn-K-means</span>
+            <span class="post-date" title="2019-12-05 17:40:08">2019/12/05</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/05/sklearn-BoostingTree/"
+           data-tag="机器学习; sklearn; boosting tree"
+           data-author="" >
+            <span class="post-title" title="sklearn-BoostingTree">sklearn-BoostingTree</span>
+            <span class="post-date" title="2019-12-05 17:15:34">2019/12/05</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/05/sklearn-RandomForest/"
+           data-tag="机器学习; RF; sklearn"
+           data-author="" >
+            <span class="post-title" title="sklearn-RandomForest">sklearn-RandomForest</span>
+            <span class="post-date" title="2019-12-05 16:22:37">2019/12/05</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/05/sklearn-PCA/"
+           data-tag="机器学习;sklearn;decomposition"
+           data-author="" >
+            <span class="post-title" title="sklearn-降维-PCA">sklearn-降维-PCA</span>
+            <span class="post-date" title="2019-12-05 18:14:57">2019/12/05</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/05/sklearn-SVM/"
+           data-tag="机器学习; sklearn ; svm"
+           data-author="" >
+            <span class="post-title" title="sklearn-SVM">sklearn-SVM</span>
+            <span class="post-date" title="2019-12-05 16:02:14">2019/12/05</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/05/sklearn-logistic%E5%9B%9E%E5%BD%92/"
+           data-tag="机器学习,sklearn"
+           data-author="" >
+            <span class="post-title" title="sklearn-logistic回归">sklearn-logistic回归</span>
+            <span class="post-date" title="2019-12-05 15:43:35">2019/12/05</span>
+        </a>
         
         <a  class=""
            href="/2019/12/02/sklearn%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E5%BA%94%E7%94%A8-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"
@@ -203,19 +291,19 @@
         </a>
         
         <a  class=""
-           href="/2019/12/02/sklearn%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%8DK%E8%BF%91%E9%82%BB/"
-           data-tag="机器学习, sklearn, K"
-           data-author="" >
-            <span class="post-title" title="sklearn在机器学习中的应用－Ｋ近邻">sklearn在机器学习中的应用－Ｋ近邻</span>
-            <span class="post-date" title="2019-12-02 19:56:01">2019/12/02</span>
-        </a>
-        
-        <a  class=""
            href="/2019/12/02/sklearn%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"
            data-tag="机器学习, 朴素贝叶斯"
            data-author="" >
             <span class="post-title" title="sklearn在机器学习中的应用-朴素贝叶斯">sklearn在机器学习中的应用-朴素贝叶斯</span>
             <span class="post-date" title="2019-12-02 19:33:46">2019/12/02</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/05/%E5%86%B3%E7%AD%96%E6%A0%91/"
+           data-tag="机器学习;sklearn"
+           data-author="" >
+            <span class="post-title" title="决策树">决策树</span>
+            <span class="post-date" title="2019-12-05 15:20:49">2019/12/05</span>
         </a>
         
         <a  class=""
@@ -232,6 +320,14 @@
            data-author="" >
             <span class="post-title" title="过拟合与欠拟合">过拟合与欠拟合</span>
             <span class="post-date" title="2019-12-02 16:41:40">2019/12/02</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/02/sklearn%E5%9C%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%8DK%E8%BF%91%E9%82%BB/"
+           data-tag="机器学习, sklearn, K"
+           data-author="" >
+            <span class="post-title" title="sklearn在机器学习中的应用－Ｋ近邻">sklearn在机器学习中的应用－Ｋ近邻</span>
+            <span class="post-date" title="2019-12-02 19:56:01">2019/12/02</span>
         </a>
         
     </nav>
@@ -322,7 +418,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#机器学习;  线性回归; sklearn','#机器学习;python library','#机器学习, sklearn, K','#机器学习, 朴素贝叶斯','#机器学习;过拟合;欠拟合',],
+            'data': ['#机器学习; sklearn; Adaboost','#机器学习; sklearn;K','#机器学习; sklearn; boosting tree','#机器学习; RF; sklearn','#机器学习;sklearn;decomposition','#机器学习; sklearn ; svm','#机器学习,sklearn','#机器学习;  线性回归; sklearn','#机器学习;python library','#机器学习, 朴素贝叶斯','#机器学习;sklearn','#机器学习;过拟合;欠拟合','#机器学习, sklearn, K',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
